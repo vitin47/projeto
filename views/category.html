@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+<div class="product-big-title-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-bit-title text-center">
+                    <h2>{$category.descategory}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="container">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-chevron-circle-down"></i>
+                   Categorias
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-right">
+                    <li class="dropdown-item" type="button">{include="categories-menu"}</li>
+                  </div>
+                </div>          
+            </div>
+
+<div class="single-product-area">
+    <div class="zigzag-bottom"></div>
+    <div class="container">
+        <div class="row">
+            {loop="$products"}
+            <div class="col-md-3 col-sm-6">
+                <div class="single-shop-product">
+                    <div class="product-upper">
+                        <img src="{$value.desphoto}" alt="">
+                    </div>
+                    <h2><a href="/products/{$value.desurl}">{$value.desproduct}</a></h2>
+                    <div class="product-carousel-price">
+                        <ins>R${function="formatPrice($value.vlprice)"}</ins>
+                    </div>
+                    
+                    <div class="product-option-shop">
+                        <a class="add_to_cart_button" data-quantity="1" data-product_sku="" data-product_id="70" rel="nofollow" href="/cart/{$value.idproduct}/add">Comprar</a>
+                    </div>                       
+                </div>
+            </div>
+            {/loop}
+            
+        </div>
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="product-pagination text-center">
+                    <nav>
+                        <ul class="pagination">
+                        {loop="$pages"}
+                        <li><a href="{$value.link}">{$value.page}</a></li>
+                        {/loop}
+                        </ul>
+                    </nav>                        
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
