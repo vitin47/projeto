@@ -30,10 +30,10 @@
 									<div class="woocommerce-billing-fields">
 										<h3>Endereço de entrega</h3>
 										<p id="billing_address_1_field" class="form-row form-row-wide address-field validate-required">
-											<label class="" for="billing_cep_1">Cep <abbr title="required" class="required">*</abbr>
+											<label class="hidden" for="billing_cep_1">Cep <abbr title="required" class="required">*</abbr>
 											</label>
-											<input type="text" value="<?php echo htmlspecialchars( $cart["deszipcode"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="00000-000" id="billing_cep_1" name="zipcode" class="input-text ">
-											<input type="submit" value="Atualizar CEP" id="place_order" class="button alt" formaction="/checkout" formmethod="get">
+											<input type="text" class="hidden" value="<?php echo htmlspecialchars( $cart["deszipcode"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="00000-000" id="billing_cep_1" name="zipcode" class="input-text ">
+											<input type="submit" class="hidden" value="Atualizar CEP" id="place_order" class="button alt" formaction="/checkout" formmethod="get">
 										</p>
 										<div class="row">
 											<div class="col-sm-9">
@@ -44,12 +44,12 @@
 												</p>
 											</div>
 											<div class="col-sm-3">
-												<p id="billing_number_1_field" class="form-row form-row-wide number-field validate-required">
-													<label class="" for="billing_number_1">Número <abbr title="required" class="required">*</abbr>
-													</label>
-													<input type="text" value="<?php echo htmlspecialchars( $address["desnumber"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="Número" id="billing_address_1" name="desnumber" class="input-text ">
-												</p>
-											</div>
+										    <p id="billing_number_1_field" class="form-row form-row-wide number-field validate-required">
+										        <label class="required" for="billing_number_1">Número <abbr title="required" required="true" class="required">*</abbr>
+										        </label>
+										        <input type="text" required="true" value="<?php echo htmlspecialchars( $address["desnumber"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="Número" id="billing_address_1" name="desnumber" class="input-text ">
+										    </p>
+										</div>
 										</div>
 										<p id="billing_address_2_field" class="form-row form-row-wide address-field">
 											<input type="text" value="<?php echo htmlspecialchars( $address["descomplement"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" placeholder="Complemento (opcional)" id="billing_address_2" name="descomplement" class="input-text ">
@@ -114,11 +114,11 @@
 												</tfoot>
 											</table>
 											<p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
-												<input type="radio" id="method-pagseguro" name="payment-method" placeholder="País" value="1" style="float:left; margin: 30px;">
+												<input type="radio"checked="checked" id="method-pagseguro" name="payment-method" placeholder="País" value="1" style="float:left; margin: 30px;">
 												<label class="" for="method-pagseguro"><img style="height:64px;" src="/res/site/img/logo-pagseguro.png"></label>
 											</p>
 											<p id="billing_state_field" class="form-row form-row-first address-field validate-state" data-o_class="form-row form-row-first address-field validate-state">
-												<input type="radio" checked="checked" id="method-paypal" name="payment-method" placeholder="País" value="2" style="float:left; margin: 30px;">
+												<input type="radio"  id="method-paypal" name="payment-method" placeholder="País" value="2" style="float:left; margin: 30px;">
 												<label class="" for="method-paypal"><img style="height:64px;" src="/res/site/img/logo-paypal.png"></label>
 											</p>
 											<div id="payment">

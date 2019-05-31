@@ -8,6 +8,7 @@ use \Hcode\Model\Address;
 use \Hcode\Model\User;
 use \Hcode\Model\Order;
 use \Hcode\Model\OrderStatus;
+use \Hcode\Model\Email;
 
 $app->get('/', function() {
 
@@ -121,9 +122,10 @@ $app->get("/cart/:idproduct/add", function($idproduct){
 		$cart->addProduct($product);
 
 	}
-
 	header("Location: /cart");
 	exit;
+
+
 
 });
 
@@ -157,16 +159,29 @@ $app->get("/cart/:idproduct/remove", function($idproduct){
 
 });
 
+$app->get("/email",function($email){
+
+	$email = new Email();
+
+	$email->get($email);
+
+	var_dump($email);
+
+
+});
+
 $app->post("/cart/freight", function(){
 
 	$cart = Cart::getFromSession();
 
 	$cart->setFreight($_POST['zipcode']);
 
-
-
 	header("Location: /cart");
 	exit;
+
+
+
+
 
 });
 $app->post("/cart/cupom", function(){
@@ -211,7 +226,6 @@ $app->get("/checkout", function(){
 	if (!$address->getdescity()) $address->setdescity('');
 	if (!$address->getdesstate()) $address->setdesstate('');
 	if (!$address->getdescountry()) $address->setdescountry('');
-	if (!$address->getdeszipcode()) $address->setdeszipcode('');
 
 	$page = new Page();
 
@@ -282,12 +296,12 @@ $app->post("/checkout", function(){
 	$order = new Order();
 
 	$order->setData([
-		'idcart'=>$cart->getidcart(),
-		'idaddress'=>$address->getidaddress(),
-		'iduser'=>$user->getiduser(),
-		'idstatus'=>OrderStatus::EM_ABERTO,
-		'vltotal'=>$cart->getvltotal()
-	]);
+	'idcart'=>$cart->getidcart(),
+	'idaddress'=>$address->getidaddress(),
+	'iduser'=>$user->getiduser(),
+	'idstatus'=>OrderStatus::EM_ABERTO,
+	'vltotal'=>$cart->getvltotal()
+]);
 
 	$order->save();
 
@@ -548,7 +562,7 @@ $app->post("/profile", function(){
 
 	if ($_POST['desemail'] !== $user->getdesemail()) {
 
-		if (User::checkLoginExists($_POST['desemail']) === true) {
+		if (User::checkLoginExist($_POST['desemail']) === true) {
 
 			User::setError("Este endereço de e-mail já está cadastrado.");
 			header('Location: /profile');
@@ -557,14 +571,16 @@ $app->post("/profile", function(){
 		}
 
 	}
-
+	$_POST['iduser'] = $user->getiduser();
 	$_POST['inadmin'] = $user->getinadmin();
 	$_POST['despassword'] = $user->getdespassword();
 	$_POST['deslogin'] = $_POST['desemail'];
 
 	$user->setData($_POST);
 
-	$user->save();
+	$user->update();
+
+	$_SESSION[User::SESSION] = $user->getValues();
 
 	User::setSuccess("Dados alterados com sucesso!");
 
@@ -648,11 +664,11 @@ $app->get("/boleto/:idorder", function($idorder){
 	$dadosboleto["carteira"] = "175";  // Código da Carteira: pode ser 175, 174, 104, 109, 178, ou 157
 
 	// SEUS DADOS
-	$dadosboleto["identificacao"] = "Hcode Treinamentos";
+	$dadosboleto["identificacao"] = "Nilton Orquideas";
 	$dadosboleto["cpf_cnpj"] = "24.700.731/0001-08";
-	$dadosboleto["endereco"] = "Rua Ademar Saraiva Leão, 234 - Alvarenga, 09853-120";
-	$dadosboleto["cidade_uf"] = "São Bernardo do Campo - SP";
-	$dadosboleto["cedente"] = "HCODE TREINAMENTOS LTDA - ME";
+	$dadosboleto["endereco"] = "Rua Rua Thalassa, 172 - Vale do Sol, 34011-030";
+	$dadosboleto["cidade_uf"] = "Nova Lima - MG";
+	$dadosboleto["cedente"] = "Nilton Orquideas";
 
 	// NÃO ALTERAR!
 	$path = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "res" . DIRECTORY_SEPARATOR . "boletophp" . DIRECTORY_SEPARATOR . "include" . DIRECTORY_SEPARATOR;
@@ -717,6 +733,9 @@ $app->post("/profile/change-password", function(){
 
 	User::verifyLogin(false);
 
+	
+
+
 	if (!isset($_POST['current_pass']) || $_POST['current_pass'] === '') {
 
 		User::setError("Digite a senha atual.");
@@ -746,6 +765,13 @@ $app->post("/profile/change-password", function(){
 		User::setError("A sua nova senha deve ser diferente da atual.");
 		header("Location: /profile/change-password");
 		exit;		
+
+	}
+	if ($_POST['new_pass'] != $_POST['new_pass_confirm']) {
+
+		User::setError("As senhas devem ser iguais");
+		header("Location: /profile/change-password");
+		exit;
 
 	}
 

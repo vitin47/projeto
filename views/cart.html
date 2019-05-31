@@ -30,8 +30,8 @@
                             <table cellspacing="0" class="shop_table cart">
                                 <thead>
                                     <tr>
-                                        <th class="product-remove">&nbsp;</th>
-                                        <th class="product-thumbnail">&nbsp;</th>
+                                        <th class="product-remove">Remover</th>
+                                        <th class="product-thumbnail">Imagem</th>
                                         <th class="product-name">Produto</th>
                                         <th class="product-price">Preço</th>
                                         <th class="product-quantity">Quantidade</th>
@@ -57,10 +57,10 @@
                                             <span class="amount">R${function="formatPrice($value.vlprice)"}</span> 
                                         </td>
 
-                                        <td class="product-quantity">
+                                         <td class="product-quantity">
                                             <div class="quantity buttons_added">
                                                 <input type="button" class="minus" value="-" onclick="window.location.href = '/cart/{$value.idproduct}/minus'">
-                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="{$value.nrqtd}" min="0" step="1">
+                                                <input type="number" size="4" class="input-text qty text" title="Qty" value="{$value.nrqtd}" min="0" max="1" step="1">
                                                 <input type="button" class="plus" value="+" onclick="window.location.href = '/cart/{$value.idproduct}/add'">
                                             </div>
                                         </td>
@@ -81,15 +81,8 @@
                                     
                                     <div class="coupon">
                                         <label for="cep">CEP:</label>
-                                        <input type="text" placeholder="00000-000" value="{$cart.deszipcode}" id="cep" class="input-text" name="zipcode">
+                                        <input type="text" placeholder="00000-000" required="true" value="{$cart.deszipcode}" id="cep" class="input-text" name="zipcode">
                                         <input type="submit" formmethod="post" formaction="/cart/freight" value="CÁLCULAR" class="button">
-                                    </div>
-                                    <h2>Possui cupom de desconto?</h2>
-                                    
-                                    <div class="coupon">
-                                        <label for="cupom">Cupom:</label>
-                                        <input type="text" placeholder="Digite o cupom"  value="" id="cupom" class="input-text" name="cupom">
-                                        <input type="submit" formmethod="post" formaction="/cart/cupom" value="CÁLCULAR" class="button">
                                     </div>
 
                                 </div>
@@ -121,11 +114,36 @@
 
                             </div>
 
+
+
                             <div class="pull-right">
                                 <input type="submit" value="Finalizar Compra" name="proceed" class="checkout-button button alt wc-forward">
                             </div>
 
                         </form>
+
+                        <div class="w3-container">
+                          <h2>Contrato</h2>
+                          <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Abrir o contrato</button>
+
+                          <div id="id01" class="w3-modal">
+                            <div class="w3-modal-content w3-animate-zoom w3-card-4">
+                              <header class="w3-container w3-teal"> 
+                                <span onclick="document.getElementById('id01').style.display='none'" 
+                                class="w3-button w3-display-topright">&times;</span>
+                                <h2>Modal Header</h2>
+                              </header>
+                              <div class="w3-container">
+                                <p>Some text..</p>
+                                <p>Some text..</p>
+                              </div>
+                              <footer class="w3-container w3-teal">
+                                <p>Modal Footer</p>
+                              </footer>
+                            </div>
+                          </div>
+                        </div>
+                        
 
                     </div>                        
                 </div>                    

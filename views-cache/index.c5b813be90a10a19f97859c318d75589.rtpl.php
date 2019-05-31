@@ -8,7 +8,7 @@
                             <h2 class="caption title">
                                 Lindas <span class="primary"> <strong>Orquideas</strong></span>
                             </h2>
-                             <a class="caption button-radius" href="#"><i class="fas fa-arrow-right"></i> Comprar</a>
+                             <a class="caption button-radius" href="/categories/5"><i class="fas fa-arrow-right"></i> Comprar</a>
                         </div>
                     </li>
                     <li><img src="/res/site/img/2.png" alt="Slide">
@@ -16,7 +16,7 @@
                             <h2 class="caption title">
                                 Aluguel <span class="primary"> <strong>Para eventos</strong></span>
                             </h2>
-                            <a class="caption button-radius" href="#"><i class="fas fa-arrow-right"></i> Comprar</a>
+                            <a class="caption button-radius" href="https://api.whatsapp.com/send?phone=5531997148987&text=Ol%C3%A1%20Nilton%2C%20vim%20atrav%C3%A9s%20do%20seu%20site."><i class="fas fa-arrow-right"></i>Contato</a>
                         </div>
                     </li>
                     <li>
@@ -25,13 +25,14 @@
                             <h2 class="caption title">
                                 Produtos para<span class="primary"> <strong>manutenção</strong></span>
                             </h2>
-                             <a class="caption button-radius" href="#"><i class="fas fa-arrow-right"></i> Comprar</a>
+                             <a class="caption button-radius" href="/categories/4"><i class="fas fa-arrow-right"></i> Comprar</a>
                         </div>
                     </li>
                 </ul>
             </div>
             <!-- ./Slider -->
     </div> <!-- End slider area -->
+    
     
     <div class="promo-area">
         <div class="zigzag-bottom"></div>
@@ -52,13 +53,15 @@
                 <div class="col-md-4 col-sm-4">
                     <div class="single-promo promo4">
                         <i class="far fa-credit-card"></i>
-                        <p>Parcelamos no cartão</p>
+                        <p>Pagamento com Pageguro</p>
                     </div>
                 </div>
             </div>
         </div>
     </div> <!-- End promo area -->
-    
+
+
+  
     <div class="maincontent-area">
         <div class="zigzag-bottom"></div>
         <div class="container">
@@ -88,6 +91,17 @@
                     </div>
                 </div>
             </div>
+            <br>
+
         </div>
+          <div class="container">
+        <h2 class="section-title">Cursos</h2>
+             <h3>Como cultivar orquídeas?</h3><p>Muitas pessoas nos fazem essa pergunta, e pensando nisso resolvemos indicar alguns cursos que não foram feitos por nós, porém trazem um conteúdo muito interessante.</p>
+        <div class="row"><br>
+            <div class="col-md-4"><a href="https://go.hotmart.com/O13959948A" target="_blank"><img src="http://comocuidardeorquideas.com/wp-content/uploads/2017/06/2-1.jpg" border="0" width="336" height="280" /></a></div>
+            <div class="col-md-4"><a href="https://go.hotmart.com/O13981457K" target="_blank"><img src="/res/site/img/1we.png" border="0" width="336" height="280" /></a></div>
+            <div class="col-md-4"><a href="https://go.hotmart.com/A13981465X" target="_blank"><img src="/res/site/img/23123.png" border="0" width="336" height="280" /></a></div>
+        </div>
+    </div>
     </div> <!-- End main content area -->
     

@@ -194,8 +194,11 @@ class Cart extends Model {
 
 	}
 
+
+
 	public function setFreight($nrzipcode)
 	{
+		
 
 		$nrzipcode = str_replace('-', '', $nrzipcode);
 
@@ -210,7 +213,7 @@ class Cart extends Model {
 			$qs = http_build_query([
 				'nCdEmpresa'=>'',
 				'sDsSenha'=>'',
-				'nCdServico'=>'40010',
+				'nCdServico'=>'41106',
 				'sCepOrigem'=>'34011030',
 				'sCepDestino'=>$nrzipcode,
 				'nVlPeso'=>$totals['vlweight'],
@@ -219,16 +222,32 @@ class Cart extends Model {
 				'nVlAltura'=>$totals['vlheight'],
 				'nVlLargura'=>$totals['vlwidth'],
 				'nVlDiametro'=>'0',
-				'sCdMaoPropria'=>'S',
+				'sCdMaoPropria'=>'N',
 				'nVlValorDeclarado'=>$totals['vlprice'],
-				'sCdAvisoRecebimento'=>'S'
+				'sCdAvisoRecebimento'=>'N'
 			]);
 
 			$xml = simplexml_load_file("http://ws.correios.com.br/calculador/CalcPrecoPrazo.asmx/CalcPrecoPrazo?".$qs);
 
 			$result = $xml->Servicos->cServico;
 
-			if ($result->MsgErro != '') {
+
+			if ($result->MsgErro == 'Não foi encontrada precificação. ERP-013: Valor declarado nao permitido (valor minimo: 19,5, valor maximo: 3000)(-1).') {
+				$msg = "O valor mínimo aceito pelos correios é de R$ 20,00";
+
+				Cart::setMsgError($msg);
+
+			} 
+			elseif ($result->MsgErro == 'A soma resultante do comprimento + largura + altura nao deve superar a 200 cm.') {
+				$msg = "Valor maximo aceito pelos correios";
+
+				Cart::setMsgError($msg);
+
+			} 
+
+			
+
+			elseif ($result->MsgErro != '') {
 
 				Cart::setMsgError($result->MsgErro);
 
@@ -247,7 +266,7 @@ class Cart extends Model {
 			return $result;
 
 		} else {
-
+			return "error";
 
 
 		}

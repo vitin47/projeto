@@ -67,7 +67,7 @@ class User extends Model {
 
 		$sql = new Sql();
 
-		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :LOGIN", array(
+		$results = $sql->select("SELECT * FROM tb_users a INNER JOIN tb_persons b ON a.idperson = b.idperson WHERE a.deslogin = :LOGIN || b.desemail = :LOGIN", array(
 			":LOGIN"=>$login
 		)); 
 
@@ -135,7 +135,7 @@ class User extends Model {
 		$sql = new Sql();
 
 		$results = $sql->select("CALL sp_users_save(:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", array(
-			":desperson"=>utf8_decode($this->getdesperson()),
+			":desperson"=>$this->getdesperson(),
 			":deslogin"=>$this->getdeslogin(),
 			":despassword"=>User::getPasswordHash($this->getdespassword()),
 			":desemail"=>$this->getdesemail(),
@@ -183,6 +183,7 @@ class User extends Model {
 		$this->setData($results[0]);		
 
 	}
+
 
 	public function delete()
 	{

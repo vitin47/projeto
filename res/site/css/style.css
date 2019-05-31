@@ -343,9 +343,9 @@ z-index: 999;}
 }
 
 .brands-area {
-  border-top:1px solid #e5e5e5;
+  border-top:1px solid #115c1f;
   border-bottom:1px solid #e5e5e5;
-  color: #fff;
+  color: #227717;
   padding: 20px 0 20px;
 }
 
@@ -678,7 +678,7 @@ width: 10px;
   margin: 10px 0 0;
 }
 
-.product-big-title-area {background: url("../img/crossword.png") repeat scroll 0 0 #e67e22}
+.product-big-title-area {background: url("../img/crossword.png") repeat scroll 0 0 #d98717}
 
 .product-bit-title h2 {
   font-family: raleway;
@@ -712,7 +712,7 @@ input[type="text"], input[type="password"], input[type="email"], textarea {
     padding: 10px;
 }
 input[type="submit"], button[type=submit] {
-    background: none repeat scroll 0 0 #e67e22;
+    background: none repeat scroll 0 0 #098d22;
     border: medium none;
     color: #fff;
     padding: 11px 20px;

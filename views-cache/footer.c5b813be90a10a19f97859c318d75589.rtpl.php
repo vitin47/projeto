@@ -21,9 +21,9 @@
                     <div class="footer-menu">
                         <h2 class="footer-wid-title">Navegação </h2>
                         <ul>
-                            <li><a href="#">Minha Conta</a></li>
-                            <li><a href="#">Meus Pedidos</a></li>
-                            <li><a href="#">Lista de Desejos</a></li>
+                            <li><a href="/profile">Minha Conta</a></li>
+                            <li><a href="/profile/orders">Meus Pedidos</a></li>
+                            <li><a href="">Lista de Desejos</a></li>
                         </ul>                        
                     </div>
                 </div>
@@ -42,8 +42,8 @@
                         <h2 class="footer-wid-title">Promoções</h2>
                         <p>Digite aqui seu e-mail para ficar por dentro das nossas promoções"</p>
                         <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Digite seu email">
+                            <form method="get" action="/email">
+                                <input type="email" name="email" placeholder="Digite seu email">
                                 <input type="submit" value="Enviar">
                             </form>
                         </div>

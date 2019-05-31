@@ -57,15 +57,6 @@
                 </div>
               </div>
             </div>
-             <div class="form-group">
-              <label for="file">Foto2</label>
-              <input type="file" class="form-control" id="file2" name="file2" value="<?php echo htmlspecialchars( $product["vlweight"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
-              <div class="box box-widget">
-                <div class="box-body">
-                  <img class="img-responsive" id="image-preview" src="<?php echo htmlspecialchars( $product["desphoto"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" alt="Photo">
-                </div>
-              </div>
-            </div>
           </div>
           </div>
           <!-- /.box-body -->
