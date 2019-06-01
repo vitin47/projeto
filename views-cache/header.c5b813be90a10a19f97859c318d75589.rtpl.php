@@ -44,12 +44,13 @@
                 <div class="col-sm-12">
                     <div class="user-menu">
                         <ul>
-                            <li><a href="/profile"><i class="fa fa-user"></i> Minha Conta</a></li>
-                            <li><a href="/cart"><i class="fa fa-shopping-cart"></i> Meu Carrinho</a></li>
                             <?php if( checkLogin(false) ){ ?>
-                            <li><a href="/profile"><i class="fa fa-user"></i> <?php echo getUserName(); ?></a></li>
+                            <li><a href="/profile"><i class="fa fa-user"></i> Olá <?php echo getUserName(); ?></a></li>
+                            <li><a href="/cart"><i class="fas fa-shopping-basket"></i> Meu Carrinho</a></li>
                             <li><a href="/logout"><i class="fa fa-close"></i> Sair</a></li>
                             <?php }else{ ?>
+                            <li><a href="/profile"><i class="fa fa-user"></i> Minha Conta</a></li>
+                            <li><a href="/cart"><i class="fas fa-shopping-basket"></i> Meu Carrinho</a></li>
                             <li><a href="/login"><i class="fa fa-lock"></i> Login</a></li>
                             <?php } ?>
                         </ul>
@@ -93,7 +94,6 @@
                         <li class=""><a href="/">Home</a></li>
                         <li><a href="/products">Produtos</a></li>
                         <li><a href="/cart">Carrinho</a></li>
-                        <li><a href="/login">Login</a></li>
                     </ul>
                 </div>  
             </div>

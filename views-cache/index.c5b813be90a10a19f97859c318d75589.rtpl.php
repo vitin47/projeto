@@ -8,7 +8,7 @@
                             <h2 class="caption title">
                                 Lindas <span class="primary"> <strong>Orquideas</strong></span>
                             </h2>
-                             <a class="caption button-radius" href="/categories/5"><i class="fas fa-arrow-right"></i> Comprar</a>
+                             <a class="caption button-radius" href="/categories/5"> <i class="fas fa-arrow-right"></i> Comprar</a>
                         </div>
                     </li>
                     <li><img src="/res/site/img/2.png" alt="Slide">
@@ -16,7 +16,7 @@
                             <h2 class="caption title">
                                 Aluguel <span class="primary"> <strong>Para eventos</strong></span>
                             </h2>
-                            <a class="caption button-radius" href="https://api.whatsapp.com/send?phone=5531997148987&text=Ol%C3%A1%20Nilton%2C%20vim%20atrav%C3%A9s%20do%20seu%20site."><i class="fas fa-arrow-right"></i>Contato</a>
+                            <a class="caption button-radius" href="https://api.whatsapp.com/send?phone=5531997148987&text=Ol%C3%A1%20Nilton%2C%20vim%20atrav%C3%A9s%20do%20seu%20site."> <i class="fas fa-arrow-right"></i> Contato</a>
                         </div>
                     </li>
                     <li>
@@ -25,7 +25,7 @@
                             <h2 class="caption title">
                                 Produtos para<span class="primary"> <strong>manutenção</strong></span>
                             </h2>
-                             <a class="caption button-radius" href="/categories/4"><i class="fas fa-arrow-right"></i> Comprar</a>
+                             <a class="caption button-radius" href="/categories/4"> <i class="fas fa-arrow-right"></i> Comprar</a>
                         </div>
                     </li>
                 </ul>
@@ -91,13 +91,29 @@
                     </div>
                 </div>
             </div>
-            <br>
 
         </div>
+        <br>
+        <br>
+        <div class="container" style="background-color: #67bf5f; border-bottom-left-radius: 20px; border-top-right-radius: 20px; padding: 10px;">
+            <h2 class="section-title">Apresentação</h2>
+            <div class="row" >
+            <div class="col-md-6">
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Nxhc8QkFHrc?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="col-md-6">
+            <p>Seduzidos pela beleza natural das orquídeas, botânicos e floristas sempre souberam que existe algo muito especial nessas top models do mundo das plantas. Agora, a história dessa vedete floral terá de ser reescrita: novas descobertas sugerem que as orquídeas surgiram quando os dinossauros ainda percorriam a superfície do planeta – muito antes do que se acreditava, portanto. Investigando na República Dominicana, uma equipe de cientistas encontrou, perfeitamente preservados no interior de uma pedra de âmbar, grãos do pólen de uma orquídea grudados nas asas de uma abelha de 20 milhões de anos.
+
+Até então, os botânicos especializados em história das plantas eram obrigados a basear os seus cálculos em alguns poucos exemplares fossilizados na tentativa de detectar a origem dessas plantas, mas a descoberta, recém- publicada pela revista científica Nature, sugere que as orquídeas surgiram em tempos muito remotos, mais especificamente há 85 milhões de anos.</p>
+        </div>
+            </div>
+        </div>
+        <br>
+        <br>
           <div class="container">
         <h2 class="section-title">Cursos</h2>
-             <h3>Como cultivar orquídeas?</h3><p>Muitas pessoas nos fazem essa pergunta, e pensando nisso resolvemos indicar alguns cursos que não foram feitos por nós, porém trazem um conteúdo muito interessante.</p>
-        <div class="row"><br>
+             <h2>Como cultivar orquídeas?</h2><p style="font-size: 20px;">Muitas pessoas nos fazem essa pergunta, e pensando nisso resolvemos indicar alguns cursos que não foram feitos por nós, porém trazem um conteúdo muito interessante.</p>
+        <div class="row">
             <div class="col-md-4"><a href="https://go.hotmart.com/O13959948A" target="_blank"><img src="http://comocuidardeorquideas.com/wp-content/uploads/2017/06/2-1.jpg" border="0" width="336" height="280" /></a></div>
             <div class="col-md-4"><a href="https://go.hotmart.com/O13981457K" target="_blank"><img src="/res/site/img/1we.png" border="0" width="336" height="280" /></a></div>
             <div class="col-md-4"><a href="https://go.hotmart.com/A13981465X" target="_blank"><img src="/res/site/img/23123.png" border="0" width="336" height="280" /></a></div>

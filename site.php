@@ -397,7 +397,7 @@ $app->post("/login", function(){
 
 	}
 
-	header("Location: /checkout");
+	header("Location: /products");
 	exit;
 
 });
